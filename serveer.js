@@ -41,7 +41,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-  //res.send('<h1>Hello Express!</h1>');
+
   res.render('home.hbs',{
     pageTitle: 'Home Page',
     welcomeMessage: 'Wutup guys'
@@ -54,6 +54,14 @@ app.get('/about', (req, res) => {
   });
 });
 
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs',{
+    pageTitle: 'Projects'
+  })
+});
+
+//bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Unbale to handle request'
